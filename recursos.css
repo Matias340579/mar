@@ -1,0 +1,94 @@
+/* Estilo general */
+body {
+  font-family: Verdana, Arial, sans-serif;
+  background-color: #e9f5e9;
+  color: #123a20;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #3c8d50;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+  font-family: Georgia, serif;
+}
+
+header p {
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+section {
+  background-color: #f0faef;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  color: #2b6038;
+  font-family: 'Trebuchet MS', sans-serif;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+.recursos-caja {
+  background-color: #d6f5d8;
+  padding: 1rem;
+  border-left: 5px solid #3c8d50;
+  border-radius: 10px;
+}
+
+.motivacion blockquote {
+  background-color: #67b87c;
+  color: white;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.boton-volver {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #3c8d50;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.boton-volver:hover {
+  background-color: #2b6038;
+}
+
+footer {
+  background-color: #3c8d50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
