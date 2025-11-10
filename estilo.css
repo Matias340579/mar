@@ -1,0 +1,123 @@
+body {
+  font-family: Verdana, Arial, sans-serif;
+  background-color: #e9f5e9;
+  color: #123a20;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #3c8d50;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-family: Georgia, serif;
+}
+
+.frase-caja {
+  background-color: #67b87c;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-style: italic;
+}
+
+main {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 2rem;
+  background-color: #f0faef;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+section h2 {
+  color: #2b6038;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+a {
+  color: #1e7a3d;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #e2c600;
+  text-decoration: none;
+}
+
+.cuadro-tipos table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.cuadro-tipos th, .cuadro-tipos td {
+  border: 1px solid #2b6038;
+  padding: 10px;
+  text-align: left;
+}
+
+.cuadro-tipos th {
+  background-color: #2b6038;
+  color: white;
+}
+
+.sintomas button, .frases button {
+  background-color: #3c8d50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.sintomas button:hover, .frases button:hover {
+  background-color: #2b6038;
+}
+
+footer {
+  background-color: #3c8d50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+.porcentaje-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  padding: 20px;
+  border: 2px solid #6ba56e;
+  border-radius: 20px;
+  background-color: #e8f5e9;
+}
+
+.porcentaje-texto {
+  flex: 1;
+  min-width: 250px;
+}
+
+.porcentaje-imagen img {
+  max-width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
