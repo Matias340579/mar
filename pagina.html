@@ -1,0 +1,155 @@
+<html !DOCTYPE html>
+ <lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salud Mental - TCA</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1> Trastorno de la Conducta Alimentaria </h1>
+    <div class="frase-caja">
+      <p>“Muchas veces, el deseo de encajar o de ser aceptad@ socialmente 
+      puede llevar a prácticas muy dañinas con la alimentación. 
+      Es común que, al no ver resultados inmediatos, aparezca la frustración, 
+      la culpa y la autoexigencia, lo que termina agravando la situación.”</p>
+    </div>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Aclaración</h2>
+      <p>
+        Es importante destacar que no soy profesional de la salud. 
+        Mi objetivo con esta página es compartir información y 
+        <a href="recursos.html">recursos</a> para apoyar a personas que sufren esta enfermedad. 
+        Si crees que alguien de tu entorno lo padece o incluso vos mismo, 
+        es fundamental buscar ayuda profesional.
+      </p>
+    </section>
+
+    <section>
+      <h2>¿Qué son los TCA?</h2>
+      <ul>
+        <li>Son enfermedades complejas que afectan la salud física y mental.</li>
+        <li>No se trata solo de “querer bajar de peso”.</li>
+        <li>Están profundamente relacionadas con factores sociales, emocionales y psicológicos.</li>
+        <li>Algunos tipos comunes: <a href="anorexia.html">anorexia</a>, 
+            <a href="bulimia.html">bulimia</a>,
+            <a href="atracon.html">trastorno por atracón</a>,
+             <a href="vigorexia.html">vigorexia</a> y
+              <a href="ortorexia.html">ortorexia</a>
+
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Lo que no se dice</h2>
+      <ul>
+        <li>No solo afectan a personas delgadas: cualquier cuerpo puede sufrir un TCA.</li>
+        <li>Los comentarios sobre el cuerpo pueden ser detonantes.</li>
+        <li>No son “una cuestión estética”: también tienen consecuencias físicas y emocionales.</li>
+        <li>Pueden generar problemas hormonales, digestivos, ansiedad, depresión y riesgo vital.</li>
+        <li>El proceso de "amigarse" con la comida es un proceso mental y fisico muy doloroso y triste, no es solo comer y ya.</li>
+        <li>Volver a comer no es curarse, los tca una vez que llegan no se van.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Un mensaje necesario</h2>
+      <p>
+        Hablar de TCA es difícil porque están rodeados de silencio y falta de comprensión. 
+        Pero es necesario visibilizarlos: 
+        no son un estilo de vida, no son una elección y no se curan con consejos simples. 
+        Reconocerlos como una enfermedad es el primer paso para abordarlos con empatía y respeto.
+      </p>
+    </section>
+
+    <section>
+      <h2>La recuperación del TCA</h2>
+      <p>
+        La recuperación es un proceso único. Habrá altibajos, días difíciles y avances lentos. 
+        No es lineal, pero es posible con ayuda profesional, apoyo y mucha fuerza. 
+        Aunque el pozo parezca profundo, también podés salir de él.
+      </p>
+    </section>
+
+    <section class="cuadro-tipos">
+      <h2>Tipos de Trastornos Alimenticios</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Descripción breve</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Anorexia nerviosa</td>
+            <td>Restricción extrema de alimentos por miedo a subir de peso.</td>
+          </tr>
+          <tr>
+            <td>Bulimia nerviosa</td>
+            <td>Episodios de atracones seguidos de purgas o conductas compensatorias.</td>
+          </tr>
+          <tr>
+            <td>Trastorno por atracón</td>
+            <td>Consumo excesivo de alimentos sin purgas posteriores, acompañado de culpa.</td>
+          </tr>
+          <tr>
+            <td>Vigorexia</td>
+            <td>Obsesión por tener un cuerpo musculoso; se acompaña de dietas estrictas y ejercicio excesivo.</td>
+          </tr>
+          <tr>
+            <td>Ortorexia (no reconocida oficialmente como trastorno alimenticio por todas las guías médicas, pero muy común)</td>
+            <td>Obsesión por comer “comida saludable” de forma extrema, al punto de afectar la vida social y emocional.</td>
+          </tr>
+          <tr>
+            <td>Otros TCA</td>
+            <td>Incluye trastornos menos comunes que también afectan la relación con la comida.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="sintomas">
+      <h2>¿Qué síntomas podrías identificar?</h2>
+      <ul id="opciones"></ul>
+      <button onclick="verResultados()">Ver resultados</button>
+      <p id="resultado"></p>
+      
+    </section>
+
+    <section class="frases">
+      <button onclick="mostrarFrase()"> Algo que podrias decir</button>
+      <p id="frase"></p>
+      <ul id="opciones"></ul>
+    </section>
+
+    <section class="centro-ayuda">
+      <h2>¿Necesitás ayuda o acompañamiento profesional?</h2>
+      <p>
+        Si vos o alguien que conocés presenta síntomas relacionados con 
+        <strong>anorexia, bulimia, trastorno por atracón</strong> u 
+        <strong>ortorexia</strong>, es importante buscar apoyo especializado.
+      </p>
+      <div class="info-centro">
+        <p><strong>Centro de Atención especializado en TCA</strong></p>
+        <p> <a href="tel:+5491151787376"> +54 9 11 5178-7376 </a></p>
+       <div class="map">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.4259011547606!2d-58.709404400000004!3d-34.54277040000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbd0ddd46b793%3A0x8d9f16598d40e69d!2sPaunero%201432%2C%20B1663%20San%20Miguel%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1762109186467!5m2!1ses!2sar" width="950" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </section>
+
+  </main>
+<button onclick="window.location.href='index.html'">Volver al iniciar Sesion</button>
+  <footer>
+    <p><strong>NO</strong> soy profesional de la salud. Todo lo compartido está basado en investigación y experiencia personal.</p>
+  </footer>
+</body>
+</html>
