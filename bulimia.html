@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulimia</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header>
+    <h1>BULIMIA</h1>
+    <div class="frase-caja">
+      “Una lucha silenciosa entre el control y la culpa.”
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>¿Qué es la Bulimia?</h2>
+      <p>
+        La bulimia nerviosa es un trastorno alimenticio caracterizado por episodios recurrentes de atracones de comida seguidos de conductas compensatorias,
+        como vómitos autoinducidos, uso excesivo de laxantes, ayunos o ejercicio extremo. 
+        Las personas que la padecen suelen mantener un peso corporal dentro del rango normal, 
+        lo que puede dificultar su detección.
+      </p>
+      <p>
+        Este trastorno está profundamente ligado a la imagen corporal y al miedo intenso a subir de peso. 
+        Quienes sufren bulimia viven con un ciclo de culpa, vergüenza y ansiedad que afecta su salud física y emocional.
+      </p>
+    </section>
+
+    <section>
+      <h2>Síntomas y características</h2>
+      <ul>
+        <li>Episodios repetidos de consumo excesivo de alimentos en poco tiempo (atracones).</li>
+        <li>Vómitos autoinducidos o uso de laxantes después de comer.</li>
+        <li>Ejercicio físico extremo para compensar la ingesta calórica.</li>
+        <li>Miedo constante a engordar y preocupación obsesiva por el peso.</li>
+        <li>Sentimientos de vergüenza, culpa y pérdida de control.</li>
+      </ul>
+      <p>
+        La bulimia puede pasar desapercibida durante años, ya que muchas personas mantienen una apariencia saludable, 
+        pero su salud interna se deteriora con el tiempo.
+      </p>
+    </section>
+
+    <section>
+      <h2>Causas de la Bulimia</h2>
+      <p>
+        La bulimia tiene un origen multifactorial, en el que intervienen aspectos psicológicos, sociales y biológicos. 
+        La presión por cumplir con ideales de belleza y delgadez suele ser uno de los factores más influyentes.
+      </p>
+      <ul>
+        <li><strong>Factores psicológicos:</strong> baja autoestima, depresión o ansiedad.</li>
+        <li><strong>Factores sociales:</strong> influencia de los medios de comunicación y redes sociales.</li>
+        <li><strong>Factores familiares:</strong> antecedentes de trastornos alimentarios o dinámicas familiares conflictivas.</li>
+      </ul>
+      <p>
+        Muchas veces, la bulimia surge como una forma de intentar controlar el entorno emocional a través de la comida.
+      </p>
+    </section>
+
+    <section>
+      <h2>Consecuencias</h2>
+      <p>
+        Las consecuencias físicas y psicológicas de la bulimia pueden ser graves si no se trata a tiempo:
+      </p>
+      <ul>
+        <li>Deshidratación y desequilibrio de electrolitos.</li>
+        <li>Daños en el esófago y dientes por los vómitos frecuentes.</li>
+        <li>Problemas cardíacos y hormonales.</li>
+        <li>Depresión, ansiedad y aislamiento social.</li>
+      </ul>
+      <p>
+        La bulimia no solo afecta el cuerpo, sino también la mente y la autoestima de quien la padece.
+      </p>
+    </section>
+
+    <section>
+      <h2>Tratamiento y ayuda</h2>
+      <p>
+        La recuperación de la bulimia requiere un abordaje integral, con acompañamiento psicológico, médico y nutricional.
+      </p>
+      <ul>
+        <li><strong>Terapia cognitivo-conductual:</strong> ayuda a cambiar los pensamientos y conductas relacionadas con la comida.</li>
+        <li><strong>Tratamiento médico:</strong> necesario para controlar los efectos físicos del trastorno.</li>
+        <li><strong>Apoyo familiar:</strong> clave para brindar contención y evitar recaídas.</li>
+      </ul>
+      <p>
+        Buscar ayuda es el primer paso para romper con el ciclo de atracones y culpa. 
+        Con tratamiento, la recuperación es posible.
+      </p>
+    </section>
+
+    <section>
+      <h2>Reflexión final</h2>
+      <p>
+        La bulimia refleja una batalla interna entre el deseo de control y la necesidad de aceptación.  
+        Aprender a valorarse más allá del cuerpo es el camino hacia una verdadera recuperación.  
+        La comida no debe ser un enemigo, sino una parte del bienestar físico y emocional.
+      </p>
+    </section>
+
+    <section class="porcentaje-contenedor">
+      <div class="porcentaje-texto">
+        <h2>Porcentaje estimado de población afectada</h2>
+        <ul id="datos"></ul>
+      </div>
+
+      <div class="porcentaje-imagen">
+        <img src="bulimia.jpg" alt="Gráfico ilustrativo sobre la prevalencia de la bulimia en Argentina">
+      </div>
+    </section>
+  </main>
+
+  <button onclick="window.location.href='pagina.html'">Volver a la página principal</button>
+
+  <footer>
+    <p>&copy; 2025 Proyecto sobre Trastornos Alimenticios</p>
+  </footer>
+
+  <script>
+    const grupos = ["Mujeres", "Hombres", "Adultos", "Adolescentes", "Niños"];
+    const porcentajes = [3.4, 0.8, 2.1, 4.2, 0.5]; // estimaciones aproximadas en población argentina
+
+    const lista = document.getElementById("datos");
+
+    for (let i = 0; i < grupos.length; i++) {
+      const li = document.createElement("li");
+      li.textContent = `${grupos[i]}: ${porcentajes[i]}% (estimado en Argentina)`;
+      lista.appendChild(li);
+    }
+  </script>
+</body>
+</html>
