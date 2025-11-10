@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenida - Salud Mental</title>
+  <link rel="stylesheet" href="estilo.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #e9f5e9;
+      text-align: center;
+      flex-direction: column;
+      font-family: Verdana, Arial, sans-serif;
+      margin: 0;
+    }
+
+    .caratula {
+      background-color: #f0faef;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      max-width: 600px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #2b6038;
+      font-family: Georgia, serif;
+    }
+
+    p {
+      color: #123a20;
+      margin: 10px 0;
+    }
+
+    button {
+      background-color: #3c8d50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 10px 5px;
+    }
+
+    button:hover {
+      background-color: #2b6038;
+    }
+
+    input, select {
+      margin: 8px 5px;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #aaa;
+      width: 80%;
+      max-width: 250px;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      display: none;
+      margin-top: 10px;
+    }
+
+    .form-container {
+      margin-top: 20px;
+    }
+
+    .link {
+      color: #3c8d50;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .link:hover {
+      color: #2b6038;
+    }
+
+    /* Animación de desvanecer */
+    .desvanecer {
+      animation: fadeOut 1s forwards;
+    }
+
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Pantalla de bienvenida y login -->
+  <div id="pantallaLogin">
+    <div class="caratula">
+      <h1>Salud Mental - Trastornos de la Conducta Alimentaria</h1>
+      <p>Bienvenid@ a esta página creada con el objetivo de informar, concientizar y acompañar a quienes atraviesan o quieren entender mejor los Trastornos de la Conducta Alimentaria (TCA).</p>
+      <p><strong>Creado por:</strong> Marcia Zamudio</p>
+      <p>Motivación: Quise hacer esta página porque considero importante hablar sobre los TCA, ya que muchas veces se minimizan o se tratan con poca empatía. La información puede ayudar a comprender y acompañar mejor.</p>
+
+      <!-- Formulario de Login -->
+      <div class="form-container" id="formularioLogin">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="nombreLogin" placeholder="Nombre" required>
+        <input type="text" id="apellidoLogin" placeholder="Apellido" required>
+        <select id="rolLogin" required>
+          <option value="" disabled selected>Seleccione su rol</option>
+          <option value="directivo">Directivo</option>
+          <option value="docente">Docente</option>
+          <option value="alumno">Alumno</option>
+          <option value="invitado">Invitado</option>
+        </select>
+        <br>
+        <button onclick="iniciarSesion()">Entrar</button>
+        <p id="error" class="error">Complete todos los campos.</p>
+        <p>¿Primera vez? <span class="link" onclick="mostrarRegistro()">Registrarse aquí</span></p>
+      </div>
+
+      <!-- Formulario de Registro (oculto al inicio) -->
+      <div class="form-container" id="formularioRegistro" style="display: none;">
+        <h2>Registrarse</h2>
+        <input type="text" id="nombreRegistro" placeholder="Nombre" required>
+        <input type="text" id="apellidoRegistro" placeholder="Apellido" required>
+        <select id="rolRegistro" required>
+          <option value="" disabled selected>Seleccione su rol</option>
+          <option value="directivo">Directivo</option>
+          <option value="docente">Docente</option>
+          <option value="alumno">Alumno</option>
+          <option value="invitado">Invitado</option>
+        </select>
+        <br>
+        <button type="button" onclick="registrarUsuario()">Registrarse</button>
+        <p><span class="link" onclick="mostrarLogin()">Volver al inicio de sesión</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cargar usuarios desde localStorage
+    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+    let usuarioActual = JSON.parse(localStorage.getItem('usuarioActual')) || null;
+
+    // Verificar si ya hay sesión activa al cargar la página
+    window.onload = function() {
+      if (localStorage.getItem('sesionActiva') === 'true' && usuarioActual) {
+        window.location.href = 'pagina.html'; // Redirige si ya está logueado
+      }
+    };
+
+    function mostrarRegistro() {
+      document.getElementById('formularioLogin').style.display = 'none';
+      document.getElementById('formularioRegistro').style.display = 'block';
+      document.getElementById('error').style.display = 'none';
+    }
+
+    function mostrarLogin() {
+      document.getElementById('formularioRegistro').style.display = 'none';
+      document.getElementById('formularioLogin').style.display = 'block';
+      document.getElementById('error').style.display = 'none';
+    }
+
+    function iniciarSesion() {
+      const nombre = document.getElementById('nombreLogin').value.trim().toLowerCase();
+      const apellido = document.getElementById('apellidoLogin').value.trim().toLowerCase();
+      const rol = document.getElementById('rolLogin').value;
+
+      if (!nombre || !apellido || !rol) {
+        document.getElementById('error').textContent = 'Complete todos los campos.';
+        document.getElementById('error').style.display = 'block';
+        return;
+      }
+
+      const usuario = usuarios.find(u => 
+        u.nombre === nombre && u.apellido === apellido && u.rol === rol
+      );
+
+      if (usuario) {
+        // Guardar sesión y redirigir
+        usuarioActual = usuario;
+        localStorage.setItem('usuarioActual', JSON.stringify(usuarioActual));
+        localStorage.setItem('sesionActiva', 'true');
+        redirigirAPagina();
+      } else {
+        document.getElementById('error').textContent = 'Usuario no registrado. Por favor, regístrese.';
+        document.getElementById('error').style.display = 'block';
+      }
+    }
+
+    function registrarUsuario() {
+      const nombre = document.getElementById('nombreRegistro').value.trim().toLowerCase();
+      const apellido = document.getElementById('apellidoRegistro').value.trim().toLowerCase();
+      const rol = document.getElementById('rolRegistro').value;
+
+      if (!nombre || !apellido || !rol) {
+        alert('Complete todos los campos para registrarse.');
+        return;
+      }
+
+      const existe = usuarios.some(u => u.nombre === nombre && u.apellido === apellido);
+      if (existe) {
+        alert('Este usuario ya está registrado. Inicie sesión.');
+        mostrarLogin();
+        return;
+      }
+
+      usuarioActual = { nombre, apellido, rol };
+      usuarios.push(usuarioActual);
+      localStorage.setItem('usuarios', JSON.stringify(usuarios));
+      localStorage.setItem('usuarioActual', JSON.stringify(usuarioActual));
+      localStorage.setItem('sesionActiva', 'true');
+
+      redirigirAPagina();
+    }
+
+    function redirigirAPagina() {
+      const pantalla = document.getElementById('pantallaLogin');
+      pantalla.classList.add('desvanecer');
+      setTimeout(() => {
+        window.location.href = 'pagina.html';
+      }, 1000);
+    }
+  </script>
+</body>
